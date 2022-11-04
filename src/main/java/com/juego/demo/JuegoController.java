@@ -21,9 +21,10 @@ import java.util.ArrayList;
 public class JuegoController {
     Game juego;
     Player jugador;
-    String nomJugador;
+
     ArrayList<ImageView> imagenesJugador = new ArrayList<>();
     ArrayList<ImageView> imagenesBank = new ArrayList<>();
+    CommController comm=new CommController();
 
     @FXML
     private ImageView ima1, ima2, ima3, ima4, ima5, ima6, ima7, ima8, ima9;
@@ -40,11 +41,16 @@ public class JuegoController {
     public JuegoController() {
     }
 
-    public void pedirNombreJugador(String nombre) {
+
+    public void pedirNombreJugador(String nombre) throws IOException {
         System.out.println(nombre);
-        this.nomJugador = nombre;
-        jugador = new Player(nomJugador);
-        System.out.println(nomJugador);
+
+        if (comm.buscarUsuarioFichero(nombre)){
+            ArrayList <String>jugadorRecuperado= comm.recuperarDatosJugador();
+            jugador = new Player(jugadorRecuperado.get(0),Integer.parseInt(jugadorRecuperado.get(1)),Integer.parseInt(jugadorRecuperado.get(2)),Integer.parseInt(jugadorRecuperado.get(3)));
+        }else{
+            jugador = new Player(nombre);
+        }
         juego = new Game(jugador);
         reset();
     }
@@ -119,6 +125,8 @@ public class JuegoController {
             btnCambiaUsuario.setVisible(true);
             btncard.setDisable(true);
             btnStand.setDisable(true);
+            updPartida();
+            comm.escribirFichero (jugador);
             lbGanador.setText(String.format("%s wins, %s loses", juego.getWinner(), juego.getLoser()));
 
         }
@@ -138,14 +146,15 @@ public class JuegoController {
         btncard.setDisable(false);
         btnStand.setDisable(false);
         lbGanador.setText("");
+        comm.escribirFichero (jugador);
         reset();
-        ;
+
 
     }
     @FXML
     protected void onclickCambiaUsuario(ActionEvent event){
         FXMLLoader loader;
-
+        comm.escribirFichero (jugador);
         try {
 
             Stage stage = (Stage) imabank1.getScene().getWindow();
@@ -157,6 +166,8 @@ public class JuegoController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
     }
 
     private void updPartida() {
