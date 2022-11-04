@@ -1,0 +1,14 @@
+.button {
+    -fx-padding: 15px;
+    -fx-background-radius: 15 15 15 15;
+    -fx-background-color: #d35403 ;
+}
+.TextField {
+    -fx-padding: 5px;
+    -fx-background-radius: 20 20 20 20;
+}
+.label{
+    -fx-text-fill: orange;
+    -fx-font-family: "Arial";
+    -fx-font-size: 20pt;
+}

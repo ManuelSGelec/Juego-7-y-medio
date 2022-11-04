@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.demo.HelloController">
+
+   <center>
+      <GridPane alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="332.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="408.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="237.0" minHeight="10.0" prefHeight="173.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imabank1" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
+                  <ImageView fx:id="imabank2" fitHeight="150.0" fitWidth="100.0" layoutX="10.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="35.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank3" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="65.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank4" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank5" fitHeight="150.0" fitWidth="100.0" layoutX="105.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="130.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank6" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="165.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank7" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="200.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank8" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="270.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank9" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="305.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank10" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="340.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fx:id="ima1" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
+                  <ImageView fx:id="ima2" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="35.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima3" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="65.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima4" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima5" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="130.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima6" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="165.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima7" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="200.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima8" fitHeight="150.0" fitWidth="100.0" layoutX="190.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="235.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima9" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="275.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima91" fitHeight="150.0" fitWidth="100.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="310.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="ima911" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="345.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <Label fx:id="puntosBanck" text="Label" textFill="#f20707" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="puntosJugador" text="Label" textFill="#f80000" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbGanador" textFill="#f5e539" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </center>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="90.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnReset" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onResetButtonClick" text="Try Again" textFill="#fff7f7" visible="false">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button fx:id="btncard" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#onHelloButtonClick" text="+1 Card" textFill="#fffbfb">
+               <VBox.margin>
+                  <Insets top="250.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+
+   </bottom>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="170.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnCambiaUsuario" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Change player" textAlignment="CENTER" textFill="#f8f8f8" translateY="68.0" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <GridPane alignment="CENTER" hgap="2.0" translateY="90.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Label text="Name" textFill="WHITE" />
+                  <Label fx:id="lbNombre" text="Label" textFill="#fffdfd" GridPane.columnIndex="1" />
+                  <Label text="Player Games" textFill="#fffafa" GridPane.rowIndex="1" />
+                  <Label fx:id="lbNumJuegos" text="Label" textFill="#f5f0f0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Won Games" textFill="#fffafa" GridPane.rowIndex="2" />
+                  <Label fx:id="lbGanados" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Lost Games" textFill="#fffefe" GridPane.rowIndex="3" />
+                  <Label fx:id="lbPerdidos" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Button fx:id="btnStand" mnemonicParsing="false" onAction="#onStandButtonClick" text=" Stand " textFill="WHITE" translateY="40.0">
+               <VBox.margin>
+                  <Insets top="160.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <stylesheets>
+      <URL value="@../css/fight.css" />
+   </stylesheets>
+</BorderPane>

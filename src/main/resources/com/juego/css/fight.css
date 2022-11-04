@@ -1,0 +1,10 @@
+.root {
+   -fx-background-image: url("../images/tapete.jpg")
+}
+
+.button {
+    -fx-padding: 5px;
+    -fx-background-radius: 15 15 15 15;
+    -fx-background-color: #d35400 ;
+}
+
