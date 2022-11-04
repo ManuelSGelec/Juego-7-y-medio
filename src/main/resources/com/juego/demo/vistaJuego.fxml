@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.demo.HelloController">
+<BorderPane prefHeight="520.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.demo.JuegoController">
 
    <center>
       <GridPane alignment="TOP_CENTER" BorderPane.alignment="CENTER">
@@ -22,48 +22,48 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="imabank1" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
-                  <ImageView fx:id="imabank2" fitHeight="150.0" fitWidth="100.0" layoutX="10.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank1" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
+                  <ImageView fx:id="imabank2" fitHeight="170.0" fitWidth="110.0" layoutX="10.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="35.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank3" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank3" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="65.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank4" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank4" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="95.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank5" fitHeight="150.0" fitWidth="100.0" layoutX="105.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank5" fitHeight="170.0" fitWidth="110.0" layoutX="105.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="130.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank6" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank6" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="165.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank7" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank7" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="200.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank8" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank8" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="270.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank9" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank9" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="305.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imabank10" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="imabank10" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="340.0" />
                      </StackPane.margin>
@@ -72,53 +72,53 @@
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <ImageView fx:id="ima1" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
-                  <ImageView fx:id="ima2" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima1" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
+                  <ImageView fx:id="ima2" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="35.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima3" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima3" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="65.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima4" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima4" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="95.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima5" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima5" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="130.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima6" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima6" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="165.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima7" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima7" fitHeight="170.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="200.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima8" fitHeight="150.0" fitWidth="100.0" layoutX="190.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima8" fitHeight="170.0" fitWidth="110.0" layoutX="190.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="235.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima9" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                  <ImageView fx:id="ima9" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="275.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima91" fitHeight="150.0" fitWidth="100.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ima91" fitHeight="170.0" fitWidth="110.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <StackPane.margin>
                         <Insets left="310.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima911" fitHeight="150.0" fitWidth="100.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ima911" fitHeight="170.0" fitWidth="110.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <StackPane.margin>
                         <Insets left="345.0" />
                      </StackPane.margin>
@@ -175,7 +175,7 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="170.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCambiaUsuario" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Change player" textAlignment="CENTER" textFill="#f8f8f8" translateY="68.0" visible="false">
+            <Button fx:id="btnCambiaUsuario" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onclickCambiaUsuario" text="Change player" textAlignment="CENTER" textFill="#f8f8f8" translateY="68.0" visible="false">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

@@ -5,15 +5,20 @@ import com.juego.demo.model.Player;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class HelloController {
+public class JuegoController {
     Game juego;
     Player jugador;
     String nomJugador;
@@ -32,16 +37,29 @@ public class HelloController {
     private Button btnReset, btnCambiaUsuario, btnStand, btncard;
 
 
-    public HelloController() {
+    public JuegoController() {
     }
 
-    @FXML
-    protected void initialize() {
+    public void pedirNombreJugador(String nombre) {
+        System.out.println(nombre);
+        this.nomJugador = nombre;
         jugador = new Player(nomJugador);
         System.out.println(nomJugador);
         juego = new Game(jugador);
+        reset();
+    }
 
+    public void reset() {
 
+        juego = new Game(jugador);
+        updPartida();
+        puntosBanck.setText(String.valueOf(juego.getBankerHand().getValue()));
+        puntosJugador.setText(String.valueOf(juego.getPlayerHand().getValue()));
+        cargarImagen();
+
+    }
+
+    public void initialize() {
         imagenesJugador.add(ima1);
         imagenesJugador.add(ima2);
         imagenesJugador.add(ima3);
@@ -61,10 +79,6 @@ public class HelloController {
         imagenesBank.add(imabank8);
         imagenesBank.add(imabank9);
         imagenesBank.add(imabank10);
-        puntosBanck.setText(String.valueOf(juego.getBankerHand().getValue()));
-        puntosJugador.setText(String.valueOf(juego.getPlayerHand().getValue()));
-        cargarImagen();
-        updPartida();
     }
 
     @FXML
@@ -124,8 +138,25 @@ public class HelloController {
         btncard.setDisable(false);
         btnStand.setDisable(false);
         lbGanador.setText("");
-        initialize();
+        reset();
+        ;
 
+    }
+    @FXML
+    protected void onclickCambiaUsuario(ActionEvent event){
+        FXMLLoader loader;
+
+        try {
+
+            Stage stage = (Stage) imabank1.getScene().getWindow();
+            loader = new FXMLLoader (LoginController.class.getResource("Login.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void updPartida() {
@@ -133,11 +164,6 @@ public class HelloController {
         lbNombre.setText(juego.getPlayerName());
         lbPerdidos.setText(String.valueOf(jugador.getLostGames()));
         lbNumJuegos.setText(String.valueOf(jugador.getPlayedGames()));
-    }
-
-    public void pedirNombreJugador(String nombre) {
-
-        this.nomJugador = nombre;
     }
 
 

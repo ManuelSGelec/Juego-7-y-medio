@@ -20,12 +20,15 @@ public class LoginController {
     @FXML
     private void  onLogin(ActionEvent event){
         System.out.println(txtNombre.getText());
-        Parent root = null;
+        FXMLLoader loader;
 
         try {
 
             Stage stage = (Stage) txtNombre.getScene().getWindow();
-            root = FXMLLoader.load(LoginController.class.getResource("hello-view.fxml"));
+            loader = new FXMLLoader (LoginController.class.getResource("vistajuego.fxml"));
+            Parent root = loader.load();
+            JuegoController juegoController = loader.getController();
+            juegoController.pedirNombreJugador(txtNombre.getText());
             Scene scene = new Scene(root);
             stage.setScene(scene);
 
