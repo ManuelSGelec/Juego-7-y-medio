@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameController {
-    ArrayList<Player> players = new ArrayList<>();
+ArrayList<Player> players=new ArrayList<>();
 
     void start() {
         System.out.println("Wellcome to Seven And a Half Game");

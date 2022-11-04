@@ -1,11 +1,13 @@
 package com.juego.demo;
 
+import com.juego.demo.model.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
 
@@ -18,7 +20,6 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-
     }
 
 
@@ -26,4 +27,13 @@ public class HelloApplication extends Application {
         launch();
     }
 
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        JuegoController controllerJugadores = new JuegoController();
+        CommController comm =new  CommController();
+        ArrayList<Player> listJugadores = controllerJugadores.getTodosJugadores();
+       // comm.vaciarFichero();
+
+    }
 }

@@ -21,10 +21,11 @@ import java.util.ArrayList;
 public class JuegoController {
     Game juego;
     Player jugador;
+    ArrayList<Player> todosJugadores = new ArrayList<>();
 
     ArrayList<ImageView> imagenesJugador = new ArrayList<>();
     ArrayList<ImageView> imagenesBank = new ArrayList<>();
-    CommController comm=new CommController();
+    CommController  comm=new CommController();
 
     @FXML
     private ImageView ima1, ima2, ima3, ima4, ima5, ima6, ima7, ima8, ima9;
@@ -51,6 +52,8 @@ public class JuegoController {
         }else{
             jugador = new Player(nombre);
         }
+
+        todosJugadores.add(jugador);
         juego = new Game(jugador);
         reset();
     }
@@ -126,7 +129,6 @@ public class JuegoController {
             btncard.setDisable(true);
             btnStand.setDisable(true);
             updPartida();
-            comm.escribirFichero (jugador);
             lbGanador.setText(String.format("%s wins, %s loses", juego.getWinner(), juego.getLoser()));
 
         }
@@ -146,15 +148,17 @@ public class JuegoController {
         btncard.setDisable(false);
         btnStand.setDisable(false);
         lbGanador.setText("");
-        comm.escribirFichero (jugador);
         reset();
 
 
     }
     @FXML
     protected void onclickCambiaUsuario(ActionEvent event){
+        if(!(comm.buscarUsuarioFichero(jugador.getName()))){
+            comm.escribirFichero(jugador);
+        }
+
         FXMLLoader loader;
-        comm.escribirFichero (jugador);
         try {
 
             Stage stage = (Stage) imabank1.getScene().getWindow();
@@ -175,7 +179,11 @@ public class JuegoController {
         lbNombre.setText(juego.getPlayerName());
         lbPerdidos.setText(String.valueOf(jugador.getLostGames()));
         lbNumJuegos.setText(String.valueOf(jugador.getPlayedGames()));
+
     }
 
+    public ArrayList<Player> getTodosJugadores() {
 
+        return todosJugadores;
+    }
 }
