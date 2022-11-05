@@ -2,6 +2,7 @@ package com.juego.demo;
 
 import com.juego.demo.model.Player;
 
+import javax.json.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,104 +10,117 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
+
 public class CommController {
+    static Path path = Paths.get("users.json");
 
-    ArrayList<String> datosJugadorRecuperado = new ArrayList();
+    private static ArrayList<Player> datosJugadores = new ArrayList();
 
 
-    public ArrayList<String> recuperarDatosJugador() {
-        return datosJugadorRecuperado;
-    }
+    private void writeInFile(Path path) {
+        JsonArray json_array = null;
+        JsonArrayBuilder js = Json.createArrayBuilder();
+        JsonWriter jsonWriter;
+        OutputStream os = null;
 
-    public ArrayList<Player> recuperaJugadores() {
-        ArrayList<Player> jugadores = new ArrayList<>();
-        Path path = Paths.get("src/main/resources/com/juego/ficheros/users.txt");
-        try {
-            BufferedReader bufferedReader = Files.newBufferedReader(path, java.nio.charset.StandardCharsets.UTF_8);
-            String linea;
 
-            while ((linea = bufferedReader.readLine()) != null) {
-                String[] userData = linea.split(";");
-                String userName = userData[0];
-                int playedGames= Integer.parseInt(userData[1]);
-                int wonGames= Integer.parseInt(userData[2]);
-                int lostGames= Integer.parseInt(userData[3]);
-                jugadores.add(new Player(userName,playedGames,wonGames,lostGames));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        for (int i = 0; i < datosJugadores.size(); i++) {
+
+            js.add(convert_to_json_object(i));
         }
-        return jugadores;
 
+        try {
+            os = new FileOutputStream(path.toFile());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        jsonWriter = Json.createWriter(os);
+        jsonWriter.writeArray(js.build());
+        jsonWriter.close();
+
+        try {
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    void readFromFile() {
 
-
-
-
-    public boolean buscarUsuarioFichero(String usuario) {
-        Path path = Paths.get("src/main/resources/com/juego/ficheros/users.txt");
+        InputStream is;
         try {
-            BufferedReader bufferedReader = Files.newBufferedReader(path, java.nio.charset.StandardCharsets.UTF_8);
-            String linea;
-            while ((linea = bufferedReader.readLine()) != null) {
-                String[] userData = linea.split(";");
-                String uname = userData[0];
-                if (usuario.equals(uname)) {
-                    datosJugadorRecuperado.add(userData[0]);
-                    datosJugadorRecuperado.add(userData[1]);
-                    datosJugadorRecuperado.add(userData[2]);
-                    datosJugadorRecuperado.add(userData[3]);
-                    return true;
+            is = new FileInputStream(path.toFile());
+            JsonReader jc = Json.createReader(is);
+            JsonArray json_array = jc.readArray();
+            jc.close();
+            if (json_array.isEmpty()) {
+                System.out.println("ta Vacio");
+            } else {
+
+                for (JsonValue row : json_array) {
+                    JsonObject json_object = row.asJsonObject();
+                    System.out.print("name: " + json_object.getString("name"));
+                    System.out.print(" playedGames: " + json_object.getInt("playedGames"));
+                    System.out.print(" wonGames: " + json_object.getInt("wonGames"));
+                    System.out.print(" lostGames: " + json_object.getInt("lostGames"));
+                    datosJugadores.add(new Player(json_object.getString("name"), json_object.getInt("playedGames"), json_object.getInt("wonGames"), json_object.getInt("lostGames")));
+
                 }
             }
-        } catch (IOException ex) {
-            System.err.println("I/O Error: " + ex);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public JsonObject convert_to_json_object(int i) {
+        JsonObjectBuilder json_object_builder = Json.createObjectBuilder();
+
+        json_object_builder.add("name", datosJugadores.get(i).getName());
+        json_object_builder.add("playedGames", datosJugadores.get(i).getPlayedGames());
+        json_object_builder.add("wonGames", datosJugadores.get(i).getWonGames());
+        json_object_builder.add("lostGames", datosJugadores.get(i).getLostGames());
+
+
+        return json_object_builder.build();
+    }
+
+    public ArrayList<Player> getDatosJugadores() {
+        return datosJugadores;
+    }
+
+    public void setDatosJugadores(ArrayList<Player> datosJugadores) {
+        this.datosJugadores = datosJugadores;
+
+    }
+
+    public void GuardarPartidas() {
+        writeInFile(path);
+    }
+
+    public boolean pruebaFichero() throws IOException {
+        File documetoNuevo = new File(path.toUri());
+        if (!documetoNuevo.exists()) {
+            BufferedWriter bufferWriter;
+            try {
+                bufferWriter = Files.newBufferedWriter(path, java.nio.charset.StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+                bufferWriter.write("[]");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                bufferWriter.flush();
+                bufferWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            return true;
         }
         return false;
     }
 
-    public void escribirFichero(Player jugador) {
 
-        Path path = Paths.get("src/main/resources/com/juego/ficheros/users.txt");
-        BufferedWriter bufferWriter = null;
-        try {
-            if (new File(String.valueOf(path)).exists())
-                bufferWriter = Files.newBufferedWriter(path, java.nio.charset.StandardCharsets.UTF_8, StandardOpenOption.APPEND);
 
-            else
-                bufferWriter = Files.newBufferedWriter(path, java.nio.charset.StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW);
-            String jugadorGuardar = jugador.getName() + ";" + jugador.getPlayedGames() + ";" + jugador.getWonGames() + ";" + jugador.getLostGames();
-            bufferWriter.write(jugadorGuardar);
-            bufferWriter.newLine();
-            bufferWriter.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void vaciarFichero() {
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter("src/main/resources/com/juego/ficheros/users.txt"));
-            bw.write("");
-            bw.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }finally {
-            try {
-                bw.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
 }
-

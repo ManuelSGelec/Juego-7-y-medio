@@ -25,7 +25,7 @@ public class JuegoController {
 
     ArrayList<ImageView> imagenesJugador = new ArrayList<>();
     ArrayList<ImageView> imagenesBank = new ArrayList<>();
-    CommController  comm=new CommController();
+    CommController comm = new CommController();
 
     @FXML
     private ImageView ima1, ima2, ima3, ima4, ima5, ima6, ima7, ima8, ima9;
@@ -43,19 +43,11 @@ public class JuegoController {
     }
 
 
-    public void pedirNombreJugador(String nombre) throws IOException {
-        System.out.println(nombre);
-
-        if (comm.buscarUsuarioFichero(nombre)){
-            ArrayList <String>jugadorRecuperado= comm.recuperarDatosJugador();
-            jugador = new Player(jugadorRecuperado.get(0),Integer.parseInt(jugadorRecuperado.get(1)),Integer.parseInt(jugadorRecuperado.get(2)),Integer.parseInt(jugadorRecuperado.get(3)));
-        }else{
-            jugador = new Player(nombre);
-        }
-
-        todosJugadores.add(jugador);
-        juego = new Game(jugador);
+    public void pedirJugador(Player jugador) {
+        this.jugador = jugador;
+        System.out.println(jugador.getName());
         reset();
+
     }
 
     public void reset() {
@@ -152,17 +144,14 @@ public class JuegoController {
 
 
     }
-    @FXML
-    protected void onclickCambiaUsuario(ActionEvent event){
-        if(!(comm.buscarUsuarioFichero(jugador.getName()))){
-            comm.escribirFichero(jugador);
-        }
 
+    @FXML
+    protected void onclickCambiaUsuario(ActionEvent event) {
         FXMLLoader loader;
         try {
 
             Stage stage = (Stage) imabank1.getScene().getWindow();
-            loader = new FXMLLoader (LoginController.class.getResource("Login.fxml"));
+            loader = new FXMLLoader(LoginController.class.getResource("Login.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
