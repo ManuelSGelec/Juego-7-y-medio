@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.demo.LoginController">
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.LoginController">
    <children>
       <Label text="Wellcome to ">
          <VBox.margin>
@@ -22,7 +22,7 @@
             <Insets top="20.0" />
          </VBox.margin>
          <image>
-            <Image url="@../images/1_CLUBS.png" />
+            <Image url="@../juego/images/1_CLUBS.png" />
          </image></ImageView>
       <Label text="Please enter your name">
          <VBox.margin>
@@ -36,7 +36,7 @@
             <Insets left="90.0" right="90.0" top="10.0" />
          </VBox.margin>
       </TextField>
-      <Button mnemonicParsing="false" onAction="#onLogin" prefWidth="80.0" text="Login" textAlignment="CENTER">
+      <Button mnemonicParsing="false" onMouseClicked="#onLogin" prefWidth="80.0" text="Login" textAlignment="CENTER">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
@@ -45,6 +45,6 @@
          </opaqueInsets></Button>
    </children>
    <stylesheets>
-      <URL value="@../css/login.css" />
+      <URL value="@../juego/css/login.css" />
    </stylesheets>
 </VBox>

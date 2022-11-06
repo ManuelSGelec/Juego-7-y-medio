@@ -1,4 +1,4 @@
-package com.juego.demo.model;
+package com.juego.model;
 
 public class FacedCard extends Card{
 

@@ -1,10 +1,10 @@
-module com.juego.demo {
+module com.juego {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
     requires java.json;
 
-    opens com.juego.demo to javafx.fxml;
-    exports com.juego.demo;
+    opens com.juego to javafx.fxml;
+    exports com.juego;
 }

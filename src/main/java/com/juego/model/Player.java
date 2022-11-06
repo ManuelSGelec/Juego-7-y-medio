@@ -1,4 +1,4 @@
-package com.juego.demo.model;
+package com.juego.model;
 public class Player {
     private String name;
     private int playedGames =0;

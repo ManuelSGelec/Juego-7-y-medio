@@ -1,6 +1,6 @@
-package com.juego.demo;
+package com.juego;
 
-import com.juego.demo.model.Player;
+import com.juego.model.Player;
 
 import javax.json.*;
 import java.io.*;
@@ -12,17 +12,14 @@ import java.util.ArrayList;
 
 
 public class CommController {
-    static Path path = Paths.get("users.json");
-
+    private static Path path = Paths.get("src/main/resources/com/juego/ficheros/users.json");
     private static ArrayList<Player> datosJugadores = new ArrayList();
-
 
     private void writeInFile(Path path) {
         JsonArray json_array = null;
         JsonArrayBuilder js = Json.createArrayBuilder();
         JsonWriter jsonWriter;
         OutputStream os = null;
-
 
         for (int i = 0; i < datosJugadores.size(); i++) {
 
@@ -46,26 +43,22 @@ public class CommController {
         }
     }
 
-    void readFromFile() {
-
+    public void readFromFile() {
         InputStream is;
         try {
             is = new FileInputStream(path.toFile());
             JsonReader jc = Json.createReader(is);
             JsonArray json_array = jc.readArray();
             jc.close();
-            if (json_array.isEmpty()) {
-                System.out.println("ta Vacio");
-            } else {
-
+            if (!json_array.isEmpty()) {
                 for (JsonValue row : json_array) {
                     JsonObject json_object = row.asJsonObject();
                     System.out.print("name: " + json_object.getString("name"));
                     System.out.print(" playedGames: " + json_object.getInt("playedGames"));
                     System.out.print(" wonGames: " + json_object.getInt("wonGames"));
                     System.out.print(" lostGames: " + json_object.getInt("lostGames"));
+                    System.out.println("");
                     datosJugadores.add(new Player(json_object.getString("name"), json_object.getInt("playedGames"), json_object.getInt("wonGames"), json_object.getInt("lostGames")));
-
                 }
             }
         } catch (FileNotFoundException e) {
@@ -74,14 +67,12 @@ public class CommController {
     }
 
 
-    public JsonObject convert_to_json_object(int i) {
+    private JsonObject convert_to_json_object(int i) {
         JsonObjectBuilder json_object_builder = Json.createObjectBuilder();
-
         json_object_builder.add("name", datosJugadores.get(i).getName());
         json_object_builder.add("playedGames", datosJugadores.get(i).getPlayedGames());
         json_object_builder.add("wonGames", datosJugadores.get(i).getWonGames());
         json_object_builder.add("lostGames", datosJugadores.get(i).getLostGames());
-
 
         return json_object_builder.build();
     }
@@ -95,11 +86,11 @@ public class CommController {
 
     }
 
-    public void GuardarPartidas() {
+    public void guardarPartidas() {
         writeInFile(path);
     }
 
-    public boolean pruebaFichero() throws IOException {
+    public boolean pruebaFichero()  {
         File documetoNuevo = new File(path.toUri());
         if (!documetoNuevo.exists()) {
             BufferedWriter bufferWriter;
@@ -115,12 +106,10 @@ public class CommController {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
             return true;
         }
         return false;
     }
-
 
 
 }

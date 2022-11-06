@@ -1,4 +1,4 @@
-package com.juego.demo.model;
+package com.juego.model;
 
 
 public abstract class Card {
