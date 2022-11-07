@@ -1,7 +1,6 @@
 package com.juego;
 
 import com.juego.model.Player;
-
 import javax.json.*;
 import java.io.*;
 import java.nio.file.Files;

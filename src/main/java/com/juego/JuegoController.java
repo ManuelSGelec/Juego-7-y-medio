@@ -33,33 +33,31 @@ public class JuegoController {
     @FXML
     private Button btnReset, btnCambiaUsuario, btnStand, btncard;
 
+    /**
+     *Al pulsar el botón de btnCard llamamos la funciona playerTurn().
+     * Llamamos a la funciona cargarImagen(
+     * Comprobamos si la partida a terminado  para mostrar los botones de volver a jugara o cambiar de jugador.
+     * si ha perdido mostramos mensaje ganador i perdedor.
+     * @param a evento click de raton
+     */
     @FXML
     protected void onCardButtonClick(Event a) {
         juego.playerTurn();
         cargarImagen();
-        if (juego.getGameOver()) {
-            btnReset.setVisible(true);
-            btnCambiaUsuario.setVisible(true);
-            btncard.setDisable(true);
-            btnStand.setDisable(true);
-            lbGanador.setText(String.format("%s wins, %s loses", juego.getWinner(), juego.getLoser()));
-            updPartida();
-        }
-
+        comprobarFinPartida();
     }
-
+    /**
+     *Al pulsar el botón de btnStand llamamos la funciona bankerTurn().
+     * Llamamos a la funciona cargarImagen(
+     * Comprobamos si la partida a terminado para mostrar los botones de volver a jugara o cambiar de jugador.
+     * @param actionEvent evento click de raton en el botón
+     */
     @FXML
     protected void onStandButtonClick(ActionEvent actionEvent) {
         juego.bankerTurn();
         cargarImagen();
-        if (juego.getGameOver()) {
-            btnReset.setVisible(true);
-            btnCambiaUsuario.setVisible(true);
-            btncard.setDisable(true);
-            btnStand.setDisable(true);
-            updPartida();
-            lbGanador.setText(String.format("%s wins, %s loses", juego.getWinner(), juego.getLoser()));
-        }
+        comprobarFinPartida();
+
     }
 
     @FXML
@@ -78,6 +76,10 @@ public class JuegoController {
         reset();
     }
 
+    /**
+     * Llamamos a la ventada de login para jugar con nuevo usuario si es necesario.
+     * @param event
+     */
     @FXML
     protected void onclickCambiaUsuario(ActionEvent event) {
         FXMLLoader loader;
@@ -86,11 +88,17 @@ public class JuegoController {
             loader = new FXMLLoader(LoginController.class.getResource("Login.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
             stage.setScene(scene);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Preparamos dos ArrayList para el jugador y el banco con los nombre de los componente imageview para después usarlos.
+     * Los componentes están fijos en la vista se han de agregar de forma correlativa en el Arraylist
+     */
     public void initialize() {
         imagenesJugador.add(imageJugador1);
         imagenesJugador.add(imageJugador2);
@@ -113,6 +121,10 @@ public class JuegoController {
         imagenesBank.add(imabank9);
         imagenesBank.add(imabank10);
     }
+
+    /**
+     * Actualizamos los Label con los valores de la partida actual.
+     */
     private void updPartida() {
         lbGanados.setText(String.valueOf(jugador.getWonGames()));
         lbNombre.setText(juego.getPlayerName());
@@ -121,7 +133,10 @@ public class JuegoController {
         puntosBanck.setText(String.valueOf(juego.getBankerHand().getValue()));
         puntosJugador.setText(String.valueOf(juego.getPlayerHand().getValue()));
     }
-
+    /**
+     * Carga las imágenes en función los ArraisList de las manos jugador y banca.
+     * Actualiza de partida en pantalla.
+     */
     private void cargarImagen() {
         for (int i = 0; i < juego.getPlayerHand().getCards().size(); i++) {
             imagenesJugador.get(i).setImage(new Image(new File(String.format("src/main/resources/com/juego/images/%s.png", juego.getPlayerHand().getCards().get(i).getCardCode())).toURI().toString()));
@@ -132,16 +147,36 @@ public class JuegoController {
         updPartida();
     }
 
+    /**
+     * Recibe el jugador enviado desde el controlador de loginController.
+     * Inicializa el jugador de la partida.
+     * @param jugador
+     */
     public void pedirJugador(Player jugador) {
         this.jugador = jugador;
-        System.out.println(jugador.getName());
         reset();
     }
 
+    //reseamos las valores de para jugar una ronda nueva
     private void reset() {
         juego = new Game(jugador);
         updPartida();
         cargarImagen();
+    }
+
+    /**
+     * Comprobamos si la partida a terminado para mostrar los botones de volver a jugara o cambiar de jugador.
+     * si ha perdido mostramos mensaje ganador i perdedor.
+     */
+    private void comprobarFinPartida() {
+        if (juego.getGameOver()) {
+            btnReset.setVisible(true);
+            btnCambiaUsuario.setVisible(true);
+            btncard.setDisable(true);
+            btnStand.setDisable(true);
+            updPartida();
+            lbGanador.setText(String.format("%s wins, %s loses", juego.getWinner(), juego.getLoser()));
+        }
     }
 
 }

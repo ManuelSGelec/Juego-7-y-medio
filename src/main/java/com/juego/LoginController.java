@@ -36,6 +36,7 @@ public class LoginController {
                 JuegoController juegoController = loader.getController();
                 juegoController.pedirJugador(jugador);
                 Scene scene = new Scene(root);
+                stage.setResizable(false);
                 stage.setScene(scene);
             } catch (IOException e) {
                 throw new RuntimeException(e);
