@@ -1,4 +1,4 @@
-package com.juego.model;
+package com.model;
 
 public class Game {
 

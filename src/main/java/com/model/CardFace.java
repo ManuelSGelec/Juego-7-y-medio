@@ -1,4 +1,4 @@
-package com.juego.model;
+package com.model;
 
 //jack(sota), knight(caballo) y king(rey)
 public enum CardFace {

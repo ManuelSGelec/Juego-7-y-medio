@@ -1,4 +1,4 @@
-package com.juego.model;
+package com.model;
 
 import java.util.ArrayList;
 
@@ -43,9 +43,9 @@ public class CardsDeck {
      */
     public Card getCardFromDeck(){
         Card cartadonada;
-        int numcarta = comprovarNumCartes();
-
-        cartadonada = cardsDeck.get(numcarta) ;
+        int numcarta = (int) ((Math.random()*cardsDeck.size()-1+1));
+        cartadonada= cardsDeck.get(numcarta);
+        cardsDeck.remove(cartadonada);
         return cartadonada;
     }
 

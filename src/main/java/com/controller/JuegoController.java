@@ -1,7 +1,7 @@
-package com.juego;
+package com.controller;
 
-import com.juego.model.Game;
-import com.juego.model.Player;
+import com.model.Game;
+import com.model.Player;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -85,7 +85,7 @@ public class JuegoController {
         FXMLLoader loader;
         try {
             Stage stage = (Stage) imabank1.getScene().getWindow();
-            loader = new FXMLLoader(LoginController.class.getResource("Login.fxml"));
+            loader = new FXMLLoader(LoginController.class.getResource("/com/vistas/Login.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setResizable(false);
@@ -139,10 +139,10 @@ public class JuegoController {
      */
     private void cargarImagen() {
         for (int i = 0; i < juego.getPlayerHand().getCards().size(); i++) {
-            imagenesJugador.get(i).setImage(new Image(new File(String.format("src/main/resources/com/juego/images/%s.png", juego.getPlayerHand().getCards().get(i).getCardCode())).toURI().toString()));
+            imagenesJugador.get(i).setImage(new Image(new File(String.format("src/main/resources/com/images/%s.png", juego.getPlayerHand().getCards().get(i).getCardCode())).toURI().toString()));
         }
         for (int i = 0; i < juego.getBankerHand().getCards().size(); i++) {
-            imagenesBank.get(i).setImage(new Image(new File(String.format("src/main/resources/com/juego/images/%s.png", juego.getBankerHand().getCards().get(i).getCardCode())).toURI().toString()));
+            imagenesBank.get(i).setImage(new Image(new File(String.format("src/main/resources/com/images/%s.png", juego.getBankerHand().getCards().get(i).getCardCode())).toURI().toString()));
         }
         updPartida();
     }

@@ -1,6 +1,6 @@
-package com.juego;
+package com.controller;
 
-import com.juego.model.Player;
+import com.model.Player;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,7 @@ public class LoginController {
             Player jugador = loginJugador(txtNombre.getText());
             try {
                 Stage stage = (Stage) txtNombre.getScene().getWindow();
-                loader = new FXMLLoader(LoginController.class.getResource("vistajuego.fxml"));
+                loader = new FXMLLoader(LoginController.class.getResource("/com/vistas/vistajuego.fxml"));
                 Parent root = loader.load();
                 JuegoController juegoController = loader.getController();
                 juegoController.pedirJugador(jugador);

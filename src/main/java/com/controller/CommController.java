@@ -1,6 +1,6 @@
-package com.juego;
+package com.controller;
 
-import com.juego.model.Player;
+import com.model.Player;
 import javax.json.*;
 import java.io.*;
 import java.nio.file.Files;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 public class CommController {
-    private static Path path = Paths.get("src/main/resources/com/juego/ficheros/users.json");
+    private static Path path = Paths.get("src/main/resources/com/ficheros/users.json");
     private static ArrayList<Player> datosJugadores = new ArrayList();
 
     private void writeInFile(Path path) {

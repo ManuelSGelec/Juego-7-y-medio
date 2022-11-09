@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="570.0" maxWidth="800.0" minHeight="570.0" minWidth="800.0" prefHeight="570.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juego.JuegoController">
+<BorderPane maxHeight="570.0" maxWidth="800.0" minHeight="570.0" minWidth="800.0" prefHeight="570.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.JuegoController">
 
    <center>
       <GridPane alignment="TOP_CENTER" prefHeight="520.0" prefWidth="550.0" BorderPane.alignment="CENTER">
@@ -251,6 +251,6 @@
       </VBox>
    </left>
    <stylesheets>
-      <URL value="@../juego/css/pantallaJuego.css" />
+      <URL value="@../css/pantallaJuego.css" />
    </stylesheets>
 </BorderPane>
