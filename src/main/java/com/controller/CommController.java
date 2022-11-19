@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.model.Player;
+
 import javax.json.*;
 import java.io.*;
 import java.nio.file.Files;
@@ -14,6 +15,10 @@ public class CommController {
     private static Path path = Paths.get("src/main/resources/com/ficheros/users.json");
     private static ArrayList<Player> datosJugadores = new ArrayList();
 
+    /**
+     * Escribe los objetos json con los datos de los jugadores.
+     * @param path ruta del fichero
+     */
     private void writeInFile(Path path) {
         JsonArray json_array = null;
         JsonArrayBuilder js = Json.createArrayBuilder();
@@ -42,6 +47,9 @@ public class CommController {
         }
     }
 
+    /**
+     *Lee  el json y carga en arraylist de players
+     */
     public void readFromFile() {
         InputStream is;
         try {
@@ -65,7 +73,11 @@ public class CommController {
         }
     }
 
-
+    /**
+     * Recuperamos los datos de los jugadores y los paseamos en el json_object_builder
+     * @param i numero de jugador en el array
+     * @return el json_object_builder creado con el objeto player
+     */
     private JsonObject convert_to_json_object(int i) {
         JsonObjectBuilder json_object_builder = Json.createObjectBuilder();
         json_object_builder.add("name", datosJugadores.get(i).getName());
@@ -80,6 +92,10 @@ public class CommController {
         return datosJugadores;
     }
 
+    /**
+     *Guardamos en el un array de players
+     * @param datosJugadores
+     */
     public void setDatosJugadores(ArrayList<Player> datosJugadores) {
         this.datosJugadores = datosJugadores;
 
@@ -89,7 +105,11 @@ public class CommController {
         writeInFile(path);
     }
 
-    public boolean pruebaFichero()  {
+    /**
+     * Si fuera necesario preparamos el fichero trabajar con él por ejemplo si lo borran
+     * @return si todo esta bien no hace nada false si el fichero no esta lo genera.
+     */
+    public boolean pruebaFichero() {
         File documetoNuevo = new File(path.toUri());
         if (!documetoNuevo.exists()) {
             BufferedWriter bufferWriter;

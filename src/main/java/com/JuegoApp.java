@@ -22,11 +22,9 @@ public class JuegoApp extends Application {
             comm.readFromFile();
         }
         FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("/com/vistas/Login.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("../Login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Play the game");
         stage.setScene(scene);
-        //stage.setScene(new Scene(root));
         stage.show();
 
     }

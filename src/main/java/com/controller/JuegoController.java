@@ -25,9 +25,13 @@ public class JuegoController {
    private ArrayList<ImageView> imagenesBank = new ArrayList<>();
 
     @FXML
-    private ImageView imageJugador1, imageJugador2, imageJugador3, imageJugador4, imageJugador5, imageJugador6, imageJugador7, imageJugador8, imageJugador9, imageJugador10;
+    private ImageView imageJugador1, imageJugador2, imageJugador3, imageJugador4, imageJugador5, imageJugador6, imageJugador7, imageJugador8, imageJugador9, imageJugador10 ;
+    @FXML
+    private ImageView imageJugador11, imageJugador12, imageJugador13, imageJugador14, imageJugador15;
     @FXML
     private ImageView imabank1, imabank2, imabank3, imabank4, imabank5, imabank6, imabank7, imabank8, imabank9, imabank10;
+    @FXML
+    private ImageView imabank11, imabank12, imabank13, imabank14, imabank15;
     @FXML
     private Label puntosJugador, puntosBanck, lbGanador, lbPerdidos, lbGanados, lbNumJuegos, lbNombre;
     @FXML
@@ -110,6 +114,11 @@ public class JuegoController {
         imagenesJugador.add(imageJugador8);
         imagenesJugador.add(imageJugador9);
         imagenesJugador.add(imageJugador10);
+        imagenesJugador.add(imageJugador11);
+        imagenesJugador.add(imageJugador12);
+        imagenesJugador.add(imageJugador13);
+        imagenesJugador.add(imageJugador14);
+        imagenesJugador.add(imageJugador15);
         imagenesBank.add(imabank1);
         imagenesBank.add(imabank2);
         imagenesBank.add(imabank3);
@@ -120,6 +129,11 @@ public class JuegoController {
         imagenesBank.add(imabank8);
         imagenesBank.add(imabank9);
         imagenesBank.add(imabank10);
+        imagenesBank.add(imabank11);
+        imagenesBank.add(imabank12);
+        imagenesBank.add(imabank13);
+        imagenesBank.add(imabank14);
+        imagenesBank.add(imabank15);
     }
 
     /**
@@ -145,6 +159,7 @@ public class JuegoController {
             imagenesBank.get(i).setImage(new Image(new File(String.format("src/main/resources/com/images/%s.png", juego.getBankerHand().getCards().get(i).getCardCode())).toURI().toString()));
         }
         updPartida();
+
     }
 
     /**

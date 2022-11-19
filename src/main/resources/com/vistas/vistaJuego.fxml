@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="570.0" maxWidth="800.0" minHeight="570.0" minWidth="800.0" prefHeight="570.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.JuegoController">
+<BorderPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.JuegoController">
 
    <center>
       <GridPane alignment="TOP_CENTER" prefHeight="520.0" prefWidth="550.0" BorderPane.alignment="CENTER">
@@ -68,6 +68,31 @@
                         <Insets left="340.0" />
                      </StackPane.margin>
                   </ImageView>
+                  <ImageView fx:id="imabank11" fitHeight="180.0" fitWidth="120.0" layoutX="380.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="375.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank12" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="410.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank13" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="445.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank14" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="480.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imabank15" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="515.0" />
+                     </StackPane.margin>
+                  </ImageView>
                </children>
                <GridPane.margin>
                   <Insets />
@@ -119,19 +144,34 @@
                         <Insets left="275.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imageJugador10" fitHeight="180.0" fitWidth="120.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageJugador10" fitHeight="180.0" fitWidth="120.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="310.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fx:id="ima911" fitHeight="180.0" fitWidth="120.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageJugador11" fitHeight="180.0" fitWidth="120.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="345.0" />
                      </StackPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageJugador12" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="380.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imageJugador13" fitHeight="180.0" fitWidth="120.0" layoutX="400.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="415.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imageJugador14" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="450.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imageJugador15" fitHeight="180.0" fitWidth="120.0" layoutX="210.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="485.0" />
                      </StackPane.margin>
                   </ImageView>
                </children>
@@ -170,7 +210,7 @@
       </GridPane>
    </center>
    <right>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="90.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="btnReset" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onResetButtonClick" prefWidth="100.0" text="Try Again" textFill="#fff7f7" translateY="-35.0" visible="false">
                <VBox.margin>
@@ -179,13 +219,16 @@
                <font>
                   <Font size="13.0" />
                </font></Button>
-            <Button fx:id="btncard" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#onCardButtonClick" prefWidth="100.0" text="+1 Card" textFill="#fffbfb">
+            <Button fx:id="btncard" alignment="CENTER" contentDisplay="TOP" layoutX="123.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#onCardButtonClick" prefWidth="80.0" text="+1 Card" textFill="#fffbfb">
                <VBox.margin>
-                  <Insets top="250.0" />
+                  <Insets top="300.0" />
                </VBox.margin>
                <font>
                   <Font size="13.0" />
-               </font></Button>
+               </font>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis></Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -227,8 +270,14 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label text="Name" textFill="WHITE" />
-                  <Label fx:id="lbNombre" text="Label" textFill="#fffdfd" GridPane.columnIndex="1" />
+                  <Label text="Name" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label fx:id="lbNombre" text="Label" textFill="#fffdfd" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
                   <Label text="Player Games" textFill="#fffafa" GridPane.rowIndex="1" />
                   <Label fx:id="lbNumJuegos" text="Label" textFill="#f5f0f0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label text="Won Games" textFill="#fffafa" GridPane.rowIndex="2" />
@@ -237,13 +286,16 @@
                   <Label fx:id="lbPerdidos" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Button fx:id="btnStand" mnemonicParsing="false" onAction="#onStandButtonClick" prefWidth="80.0" text=" Stand " textFill="WHITE" translateY="70.0">
+            <Button fx:id="btnStand" layoutX="123.0" layoutY="500.0" mnemonicParsing="false" onAction="#onStandButtonClick" prefWidth="80.0" text=" Stand " textFill="WHITE" translateY="-25.0">
                <VBox.margin>
-                  <Insets top="160.0" />
+                  <Insets top="300.0" />
                </VBox.margin>
                <font>
                   <Font size="13.0" />
-               </font></Button>
+               </font>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis></Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" top="10.0" />
