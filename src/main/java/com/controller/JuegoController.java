@@ -64,6 +64,12 @@ public class JuegoController {
 
     }
 
+    /**
+     * Nueva paratida reseteamos las imágenes.
+     * Dejamos de mostrar los botones de reset y cambiaUsuario
+     * Volvemos a habilitar botones de card y stand
+     * @param actionEvent
+     */
     @FXML
     protected void onResetButtonClick(ActionEvent actionEvent) {
         for (ImageView a : imagenesBank) {
@@ -89,7 +95,7 @@ public class JuegoController {
         FXMLLoader loader;
         try {
             Stage stage = (Stage) imabank1.getScene().getWindow();
-            loader = new FXMLLoader(LoginController.class.getResource("/com/vistas/Login.fxml"));
+            loader = new FXMLLoader(LoginController.class.getResource("/com/vistas/vistaLogin.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setResizable(false);
@@ -102,6 +108,9 @@ public class JuegoController {
     /**
      * Preparamos dos ArrayList para el jugador y el banco con los nombre de los componente imageview para después usarlos.
      * Los componentes están fijos en la vista se han de agregar de forma correlativa en el Arraylist
+     * la mano
+     * La mano más improbable pero posible es de 14 cartas todas las figuras 12 figuras y 2 cartas de valor 1
+     * Preparamos el juego para 15 cartas.
      */
     public void initialize() {
         imagenesJugador.add(imageJugador1);
@@ -172,7 +181,9 @@ public class JuegoController {
         reset();
     }
 
-    //reseamos las valores de para jugar una ronda nueva
+    /**
+     * reseamos las valores de para jugar una ronda nueva
+     */
     private void reset() {
         juego = new Game(jugador);
         updPartida();

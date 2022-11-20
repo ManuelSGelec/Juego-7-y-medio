@@ -18,11 +18,15 @@ public class LoginController {
     @FXML
     TextField txtNombre;
 
+    /**
+     * Capturamos el evento del botón
+     * @param a
+     */
     @FXML
     private void onLogin(Event a) {
         String nombre = txtNombre.getText();
         if (nombre == null || nombre.isEmpty()) {
-            Alert alert =new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("El campo nombre esta vacio");
             alert.showAndWait();
@@ -44,6 +48,12 @@ public class LoginController {
         }
     }
 
+    /**
+     * Capturamos el String de textfield  y comprobamos si en el arraylist ya está guardados ese jugador , si aun no esta en el arraylist lo creamos de nuevo.
+     * Si el jugador este devolvemos ese jugador.
+     * @param nombreJugador
+     * @return jugador de la partida
+     */
     private Player loginJugador(String nombreJugador) {
         CommController comm = new CommController();
         ArrayList<Player> listaJugadores = new ArrayList<>();
@@ -65,7 +75,6 @@ public class LoginController {
         listaJugadores.add(new Player(nombreJugador));
         comm.setDatosJugadores(listaJugadores);
         return listaJugadores.get((listaJugadores.size() - 1));
-
 
     }
 

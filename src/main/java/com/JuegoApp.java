@@ -21,7 +21,7 @@ public class JuegoApp extends Application {
         if (!comm.pruebaFichero()){
             comm.readFromFile();
         }
-        FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("/com/vistas/Login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("/com/vistas/vistaLogin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Play the game");
         stage.setScene(scene);

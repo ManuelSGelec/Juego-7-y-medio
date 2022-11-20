@@ -106,7 +106,7 @@ public class CommController {
     }
 
     /**
-     * Si fuera necesario preparamos el fichero trabajar con él por ejemplo si lo borran
+     * Si fuera necesario preparamos el fichero trabajar con él, por ejemplo si lo borran
      * @return si todo esta bien no hace nada false si el fichero no esta lo genera.
      */
     public boolean pruebaFichero() {
